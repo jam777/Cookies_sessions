@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,11 +43,17 @@
               Cart
             </a>
           </li>
+          <li>
+            <a href="/deconnect.php" class="btn btn-primary deconnect navbar-btn">
+              Deconnection
+            </a>
+          </li>
         </ul>
+
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container-fluid text-right">
-    <strong>Hello Wilder !</strong>
+    <strong>Hello <?= $_SESSION['name'] ?> !</strong>
   </div>
 </header>

@@ -1,3 +1,38 @@
+<?php 
+session_start();
+
+//Gestion Session
+
+if(!isset($_SESSION) || empty($_SESSION)){
+  header('Location:login.php');
+}
+elseif(!$_SESSION['status']){
+  header('Location:login.php');
+}
+
+//Gestion Panier
+
+if(isset($_GET)){
+  switch ($_GET['add_to_cart']) {
+      case '46':
+        $_SESSION['l1']['nbre']++;
+      break;
+      case '36':
+        $_SESSION['l2']['nbre']++;
+      case '58':
+        $_SESSION['l3']['nbre']++;
+      break;
+      case '32':
+       $_SESSION['l4']['nbre']++;
+      break;
+      default:
+      
+      break;
+  }
+}
+
+?>
+
 <?php require 'inc/head.php'; ?>
 <section class="cookies container-fluid">
   <div class="row">

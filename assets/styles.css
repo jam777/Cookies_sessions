@@ -6,6 +6,15 @@ h1, h2, h3, h4,
 strong {
   font-family: 'Kaushan Script', cursive;
 }
+.deconnect{
+  color:white !important;
+  margin-left:10px; 
+}
+
+a.deconnect:hover{
+  background-color: #34495e !important;    
+}  
+
 
 .navbar-brand{
     padding: 5px 15px;

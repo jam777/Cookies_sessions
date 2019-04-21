@@ -1,4 +1,15 @@
-<?php require 'inc/head.php'; ?>
+<?php 
+include 'create_password.php';
+
+if(isset($_POST)){
+  if($_POST['loginname']==$_SESSION['user']){
+    $_SESSION['status']=true;
+    header('Location:index.php');
+  }  
+}
+?>
+
+<?php require 'inc/head.php';?>
 <div class="container" style="margin-top:40px">
 <div class="row">
   <div class="col-sm-6 col-md-4 col-md-offset-4">
@@ -7,7 +18,9 @@
         <strong> Sign in to continue</strong>
       </div>
       <div class="panel-body">
-        <form role="form" action="#" method="POST">
+
+
+        <form role="form" action="" method="POST">
           <fieldset>
             <div class="row">
               <div class="center-block">
@@ -22,11 +35,18 @@
                     <span class="input-group-addon">
                       <i class="glyphicon glyphicon-user"></i>
                     </span>
+
+
                     <input class="form-control" placeholder="Username" name="loginname" type="text" autofocus>
+
+
                   </div>
                 </div>
                 <div class="form-group">
+
+
                   <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign in">
+                 
                 </div>
               </div>
             </div>
